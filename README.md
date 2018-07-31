@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MeanTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
@@ -26,6 +25,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# innodays-oseg-project
->>>>>>> 0e14f2c903bc68fe235f53a437fdf550517244fa
