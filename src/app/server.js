@@ -1,3 +1,8 @@
+import {Module} from "./module";
+import {Plan} from "./plan";
+import {Step} from "./step";
+import {Comment} from "./comment/comment";
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongodb = require("mongodb");
@@ -44,6 +49,193 @@ function handleError(res, reason, message, code) {
 
 app.get("/api/main", function(req, res) {
 
+  let modules = new Array();
+  let steps = new Array();
+  let moduleComments = new Array();
+  let stepComments = new Array();
+
+  // GearBox
+  let step = new Step();
+  step._id = '1';
+  step.text = 'Weld the left casing.';
+  steps.add(step);
+
+  step = new Step();
+  step._id = '2';
+  step.text = 'Insert the axle.';
+  steps.add(step);
+
+  step = new Step();
+  step._id = '3';
+  step.text = 'Add the forward gears to the axle.';
+  steps.add(step);
+
+  step = new Step();
+  step._id = '4';
+  step.text = 'Add the backward gears to the axle.';
+  stepComments.add("Using the plural of 'gears' suggests there is more than one.");
+  steps.add(stepComments);
+  step.comments = stepComments;
+  steps.add(step);
+
+  step = new Step();
+  step._id = '5';
+  step.text = 'Attach the second piece of the casing onto the first.';
+  stepComments = new Array();
+  stepComments.add('Maybe mention that the second piece has to be welded before it can be attached.');
+  step.comments = stepComments;
+  steps.add(step);
+
+  let plan = new Plan();
+  plan._id = '1';
+  plan.steps = steps;
+
+  let moduleComment = new Comment();
+  moduleComment._id = '1';
+  moduleComment.author = 'CarEnthusiast';
+  moduleComment.finishedOn = '2018-05-16';
+  moduleComment.typeOfProject = 'Car';
+  moduleComment.text = 'Great work! Maybe a version with adjustable gear rations would be of interest. My car runs fine, but I\'d like a little more acceleration.';
+  moduleComments.add(moduleComment);
+
+  moduleComment = new Comment();
+  moduleComment._id = '2';
+  moduleComment.author = 'John Doe';
+  moduleComment.finishedOn = '2017-08-02';
+  moduleComment.typeOfProject = 'Coffee grinder';
+  moduleComment.text = 'Way too large for household appliances.';
+  moduleComments.add(moduleComment);
+
+  let module = new Module();
+  module._id = '1';
+  module.name = 'Gear Box';
+  module.description = 'A modular gearbox with three for forward motion and one for backward motion.';
+  module.author = 'Michael Schuhmacher';
+  module.category  = 'Component';
+  module.version = 1;
+  module.rating = 4;
+  module.plan = plan;
+  module.dependsOn = [3, 4, 5];
+  module.comments = moduleComments;
+  modules.add(module);
+
+
+  // Wheels
+  steps = new Array();
+  moduleComments = new Array();
+  stepComments = new Array();
+
+  step = new Step();
+  step._id = '6';
+  step.text = 'Forge the rim.';
+  steps.add(step);
+
+  step = new Step();
+  step._id = '7';
+  step.text = 'Pump up inner tube to 3 psi.';
+  stepComments.add('Step 3 is lot easier if this is left to the end.');
+  step.comments = stepComments;
+  steps.add(step);
+
+  step = new Step();
+  step._id = '8';
+  step.text = 'Put tire with tube on rim.';
+  steps.add(step);
+
+  plan = new Plan();
+  plan._id = '2';
+  plan.steps = steps;
+
+  moduleComment = new Comment();
+  moduleComment._id = '3';
+  moduleComment.author = 'BikeFanatic';
+  moduleComment.finishedOn = '2018-07-21';
+  moduleComment.typeOfProject = 'Bicycle';
+  moduleComment.text = 'This module is directed at motored vehicles, the rim tends to get quite heavy.';
+  moduleComments.add(moduleComment);
+
+  module = new Module();
+  module._id = '2';
+  module.name = 'Wheel';
+  module.description = 'Wheel with rim and tire.';
+  module.category  = 'Component';
+  module.version = 2;
+  module.rating = 3;
+  module.plan = plan;
+  module.dependsOn = [4, 5];
+  module.comments = moduleComments;
+  modules.add(module);
+
+  // Hammer
+  plan = new Plan();
+  plan._id = '3';
+  plan.steps = [];
+
+  module = new Module();
+  module._id = '3';
+  module.name = 'Hammer';
+  module.description = 'A regular hammer.';
+  module.author = 'Tim Allen';
+  module.category  = 'Tool';
+  module.version = 1;
+  module.rating = 5;
+  module.plan = plan;
+  module.dependsOn = [];
+  module.comments = [];
+  modules.add(module);
+
+  // Screwdriver
+  plan = new Plan();
+  plan._id = '4';
+  plan.steps = [];
+
+  module = new Module();
+  module._id = '4';
+  module.name = 'Screwdriver';
+  module.description = 'A screwdriver for Phillips head screws.';
+  module.author = 'Tim Allen';
+  module.category  = 'Tool';
+  module.version = 1;
+  module.rating = 5;
+  module.plan = plan;
+  module.dependsOn = [];
+  module.comments = [];
+  modules.add(module);
+
+  // Screw
+  moduleComments = new Array();
+
+  plan = new Plan();
+  plan._id = '5';
+  plan.steps = [];
+
+  moduleComment = new Comment();
+  moduleComment._id = '3';
+  moduleComment.author = 'CarEnthusiast';
+  moduleComment.finishedOn = '2018-07-21';
+  moduleComment.typeOfProject = 'Bicycle';
+  moduleComment.text = 'The material the screw is made of seems quite soft. Be careful when using in critical parts.';
+  moduleComments.add(moduleComment);
+
+  module = new Module();
+  module._id = '5';
+  module.name = 'Screw with a Phillips head';
+  module.description = 'Size 5';
+  module.author = 'Tim Allen';
+  module.category  = 'Material';
+  module.version = 1;
+  module.rating = 4;
+  module.plan = plan;
+  module.dependsOn = [];
+  module.comments = moduleComments;
+  modules.add(module);
+
+
+
+  res.status(200).json(modules);
+
+
+/*
   db.collection(MODULES_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get main.");
@@ -51,6 +243,7 @@ app.get("/api/main", function(req, res) {
       res.status(200).json(docs);
     }
   });
+  */
 });
 
 app.post("/api/main", function(req, res) {

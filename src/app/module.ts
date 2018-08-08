@@ -5,10 +5,12 @@ export class Module {
   _id?: string;
   name: string;
   description: string;
+  author: string;
   category: string;
   version: number;
   rating: number;
   // TODO pictures
   plan: Plan;
-  comment: Comment;
+  dependsOn: number[];
+  comments: Comment[];
 }
