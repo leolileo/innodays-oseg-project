@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Module } from '../../module';
-import { ModuleService } from '../../module.service';
+import {Component, OnInit} from '@angular/core';
+import {Module} from '../../module';
+import {ModuleService} from '../../module.service';
 import {Plan} from '../../plan';
 
 @Component({
@@ -12,10 +12,11 @@ import {Plan} from '../../plan';
 
 export class MainModuleListComponent implements OnInit {
 
-  modules: Module[]
-  selectedModule: Module
+  modules: Module[];
+  selectedModule: Module;
 
-  constructor(private moduleService: ModuleService) { }
+  constructor(private moduleService: ModuleService) {
+  }
 
   ngOnInit() {
     this.moduleService
@@ -31,7 +32,7 @@ export class MainModuleListComponent implements OnInit {
     return this.modules.findIndex((module) => {
       return module._id === moduleId;
     });
-  }
+  };
 
   selectModule(module: Module) {
     this.selectedModule = module;
@@ -41,11 +42,13 @@ export class MainModuleListComponent implements OnInit {
     const module: Module = {
       name: '',
       description: '',
+      author: '',
       category: 'Component',
       version: 1,
       rating: 3,
       plan: new Plan(),
-      comments: []
+      comments: [],
+      dependsOn: []
     };
 
     // By default, a newly-created module will have the selected state.
@@ -59,13 +62,13 @@ export class MainModuleListComponent implements OnInit {
       this.selectModule(null);
     }
     return this.modules;
-  }
+  };
 
   addModule = (module: Module) => {
     this.modules.push(module);
     this.selectModule(module);
     return this.modules;
-  }
+  };
 
   updateModule = (module: Module) => {
     const idx = this.getIndexOfModule(module._id);
@@ -74,5 +77,5 @@ export class MainModuleListComponent implements OnInit {
       this.selectModule(module);
     }
     return this.modules;
-  }
+  };
 }
