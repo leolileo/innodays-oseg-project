@@ -9,10 +9,14 @@ import {ContactListComponent} from './contacts/contact-list/contact-list.compone
 import {RouterModule, Routes} from '@angular/router';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
+import { ModulpageComponent } from './modulpage/modulpage.component';
+import { AddmodulepageComponent } from './addmodulepage/addmodulepage.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
-  {path: 'crisis-center', component: NotfoundComponent},
-  {path: 'hero/:id', component: NotfoundComponent},
+  {path: 'module/:id', component: ModulpageComponent},
+  {path: 'add', component: AddmodulepageComponent},
   {
     path: '',
     component: LandingpageComponent,
@@ -33,7 +37,11 @@ const appRoutes: Routes = [
     ContactListComponent,
     NotfoundComponent,
     LandingpageComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    ModulpageComponent,
+    AddmodulepageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule.forRoot(
