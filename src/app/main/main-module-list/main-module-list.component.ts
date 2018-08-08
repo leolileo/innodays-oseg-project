@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Module } from '../../module';
 import { ModuleService } from '../../module.service';
 import {Plan} from '../../plan';
-import {Comment} from '../../comment/comment';
 
 @Component({
   selector: 'app-main-module-list',
@@ -46,7 +45,7 @@ export class MainModuleListComponent implements OnInit {
       version: 1,
       rating: 3,
       plan: new Plan(),
-      comment: new Comment()
+      comments: []
     };
 
     // By default, a newly-created module will have the selected state.

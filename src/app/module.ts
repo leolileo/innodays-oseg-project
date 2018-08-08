@@ -10,5 +10,5 @@ export class Module {
   rating: number;
   // TODO pictures
   plan: Plan;
-  comment: Comment;
+  comments: Comment[];
 }
