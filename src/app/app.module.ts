@@ -11,8 +11,6 @@ import {LandingpageComponent} from './landingpage/landingpage.component';
 import { ModulpageComponent } from './modulpage/modulpage.component';
 import { AddmodulepageComponent } from './addmodulepage/addmodulepage.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { CommentComponent } from './comment/comment.component';
 import { MainModuleListComponent } from './main/main-module-list/main-module-list.component';
 import { MainModuleIntroComponent } from './main/main-module-intro/main-module-intro.component';
 
@@ -42,8 +40,6 @@ const appRoutes: Routes = [
     ModulpageComponent,
     AddmodulepageComponent,
     HeaderComponent,
-    FooterComponent,
-    CommentComponent,
     MainModuleListComponent,
     MainModuleIntroComponent
   ],
