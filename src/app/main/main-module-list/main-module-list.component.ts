@@ -23,6 +23,7 @@ export class MainModuleListComponent implements OnInit {
       .getModules()
       .then((modules: Module[]) => {
         this.modules = modules.map((module) => {
+          console.log(module);
           return module;
         });
       });

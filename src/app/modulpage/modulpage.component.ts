@@ -44,7 +44,8 @@ export class ModulpageComponent implements OnInit {
 
   getCategorieFromModules() {
     this.selectedModule.dependsOn.forEach(function (moduleId) {
-      if (this.getModuleByID(moduleId).category === 'component') {
+      let module = this.getModuleByID(moduleId);
+      if (module.category === 'component') {
         this.componentsFromSelected.push(module);
       }
       if (this.getModuleByID(moduleId).category === 'material') {
