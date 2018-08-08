@@ -5,7 +5,7 @@ import {Plan} from '../../plan';
 import {Comment} from '../../comment/comment';
 
 @Component({
-  selector: 'main-module-list',
+  selector: 'app-main-module-list',
   templateUrl: './main-module-list.component.html',
   styleUrls: ['./main-module-list.component.css'],
   providers: [ModuleService]
