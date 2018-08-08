@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
+<<<<<<< Updated upstream
 import {AppComponent} from './app.component';
 import {ContactDetailsComponent} from './contacts/contact-details/contact-details.component';
 import {ContactListComponent} from './contacts/contact-list/contact-list.component';
@@ -25,15 +26,29 @@ const appRoutes: Routes = [
   },*/
   {path: '**', component: NotfoundComponent}
 ];
+=======
+import { AppComponent } from './app.component';
+import { ContactDetailsComponent } from './main/contact-details/contact-details.component';
+import { ContactListComponent } from './main/contact-list/contact-list.component';
+import { CommentComponent } from './comment/comment.component';
+import { MainModuleListComponent } from './main/main-module-list/main-module-list.component';
+import { MainModuleIntroComponent } from './main/main-module-intro/main-module-intro.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactDetailsComponent,
     ContactListComponent,
+<<<<<<< Updated upstream
     NotfoundComponent,
     LandingpageComponent,
     LandingpageComponent
+=======
+    CommentComponent,
+    MainModuleListComponent,
+    MainModuleIntroComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     RouterModule.forRoot(
@@ -47,5 +62,9 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
+<<<<<<< Updated upstream
 export class AppModule {
 }
+=======
+export class AppModule { }
+>>>>>>> Stashed changes
