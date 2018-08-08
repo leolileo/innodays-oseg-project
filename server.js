@@ -42,22 +42,22 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
-/*  "/api/contacts"
- *    GET: finds all contacts
+/*  "/api/main"
+ *    GET: finds all main
  *    POST: creates a new contact
  */
 
-app.get("/api/contacts", function(req, res) {
+app.get("/api/main", function(req, res) {
   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
-      handleError(res, err.message, "Failed to get contacts.");
+      handleError(res, err.message, "Failed to get main.");
     } else {
       res.status(200).json(docs);
     }
   });
 });
 
-app.post("/api/contacts", function(req, res) {
+app.post("/api/main", function(req, res) {
   var newContact = req.body;
   newContact.createDate = new Date();
 
@@ -74,13 +74,13 @@ app.post("/api/contacts", function(req, res) {
   }
 });
 
-/*  "/api/contacts/:id"
+/*  "/api/main/:id"
  *    GET: find contact by id
  *    PUT: update contact by id
  *    DELETE: deletes contact by id
  */
 
-app.get("/api/contacts/:id", function(req, res) {
+app.get("/api/main/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get contact");
@@ -90,7 +90,7 @@ app.get("/api/contacts/:id", function(req, res) {
   });
 });
 
-app.put("/api/contacts/:id", function(req, res) {
+app.put("/api/main/:id", function(req, res) {
   var updateDoc = req.body;
   delete updateDoc._id;
 
@@ -104,7 +104,7 @@ app.put("/api/contacts/:id", function(req, res) {
   });
 });
 
-app.delete("/api/contacts/:id", function(req, res) {
+app.delete("/api/main/:id", function(req, res) {
   db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete contact");

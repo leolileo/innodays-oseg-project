@@ -4,15 +4,18 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {ContactDetailsComponent} from './contacts/contact-details/contact-details.component';
-import {ContactListComponent} from './contacts/contact-list/contact-list.component';
 import {RouterModule, Routes} from '@angular/router';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
+
 import { ModulpageComponent } from './modulpage/modulpage.component';
 import { AddmodulepageComponent } from './addmodulepage/addmodulepage.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { CommentComponent } from './comment/comment.component';
+import { MainModuleListComponent } from './main/main-module-list/main-module-list.component';
+import { MainModuleIntroComponent } from './main/main-module-intro/main-module-intro.component';
+
 
 const appRoutes: Routes = [
   {path: 'module/:id', component: ModulpageComponent},
@@ -33,15 +36,16 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ContactDetailsComponent,
-    ContactListComponent,
     NotfoundComponent,
     LandingpageComponent,
     LandingpageComponent,
     ModulpageComponent,
     AddmodulepageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CommentComponent,
+    MainModuleListComponent,
+    MainModuleIntroComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -55,5 +59,5 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+
+export class AppModule { }

@@ -1,0 +1,27 @@
+<div class="row">
+  <button class="btn btn-success" (click)="createNewModule()">New</button>
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let module of modules"
+          (click)="selectModule(module)"
+          [class.active]="module === selectedModule">
+        <div class="thumbnail">
+          <img src="thumbnail.png" alt="{{module.name}}">
+          <div class="caption">
+            <div class="row">
+              <div class="col-md-9">
+                <h3>{{module.name}}</h3>
+              </div>
+              <div class="col-md-3">
+                <img src="rating.png">
+              </div>
+            </div>
+            <p>{{module.description}}</p>
+          </div>
+        </div>
+        {{module.name}}
+      </li>
+    </ul>
+  </div>
+</div>
