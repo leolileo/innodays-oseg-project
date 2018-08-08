@@ -4,7 +4,8 @@ import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class ModuleService {
-  private modulesUrl = '/api/main';
+  private modulesUrl = '/api/modules';
+  private moduleUrl = '/api/module';
 
   constructor (private http: Http) {}
 
@@ -18,7 +19,7 @@ export class ModuleService {
 
   // post("/api/main")
   createModule(newModule: Module): Promise<void | Module> {
-    return this.http.post(this.modulesUrl, newModule)
+    return this.http.post(this.moduleUrl, newModule)
       .toPromise()
       .then(response => response.json() as Module)
       .catch(this.handleError);
@@ -28,7 +29,7 @@ export class ModuleService {
 
   // delete("/api/main/:id")
   deleteModule(delModuleId: String): Promise<void | String> {
-    return this.http.delete(this.modulesUrl + '/' + delModuleId)
+    return this.http.delete(this.moduleUrl + '/' + delModuleId)
       .toPromise()
       .then(response => response.json() as String)
       .catch(this.handleError);
@@ -36,7 +37,7 @@ export class ModuleService {
 
   // put("/api/main/:id")
   updateModule(putModule: Module): Promise<void | Module> {
-    const putUrl = this.modulesUrl + '/' + putModule._id;
+    const putUrl = this.moduleUrl + '/' + putModule._id;
     return this.http.put(putUrl, putModule)
       .toPromise()
       .then(response => response.json() as Module)
