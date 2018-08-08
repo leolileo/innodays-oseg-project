@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Module } from './module';
-import { Http, Response } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Module} from './module';
+import {Http, Response} from '@angular/http';
 
 @Injectable()
 export class ModuleService {
-  private modulesUrl = '/api/main';
+  private modulesUrl = '/api/modules';
 
-  constructor (private http: Http) {}
+  constructor(private http: Http) {
+  }
 
   // get("/api/main")
   getModules(): Promise<void | Module[]> {
@@ -43,7 +44,7 @@ export class ModuleService {
       .catch(this.handleError);
   }
 
-  private handleError (error: any) {
+  private handleError(error: any) {
     const errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead

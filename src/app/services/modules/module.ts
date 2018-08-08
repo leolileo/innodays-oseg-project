@@ -1,5 +1,5 @@
-import {Plan} from './plan';
-import {Comment} from './comment/comment';
+import {Plan} from '../plans/plan';
+import {Comment} from '../../comment/comment';
 
 export class Module {
   _id?: string;

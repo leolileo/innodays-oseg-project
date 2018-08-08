@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div class="row">
-    <h1 class="display-2">Module name</h1>
+    <h1 class="display-2">{{selectedModule.name}}</h1>
   </div>
 
   <div class="row">
@@ -20,9 +20,7 @@
       </div>
     </div>
     <div class="col-8">
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-        featured
-        content or information.</p>
+      <p class="lead">{{selectedModule.description}}</p>
     </div>
   </div>
 
@@ -33,10 +31,9 @@
         <li class="list-group-item d-flex justify-content-between align-items-center active">
           Modules
         </li>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-        </a>
+        <a *ngFor="let module of selectedModule.dependsOn"
+           (click)="selectModule(module)" href="/module/{{selectedModule._id}}"
+           class="list-group-item list-group-item-action">{{module.name}}</a>
       </ul>
     </div>
 

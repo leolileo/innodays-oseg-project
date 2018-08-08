@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Module} from '../../module';
-import {ModuleService} from '../../module.service';
-import {Plan} from '../../plan';
+import {Module} from '../../services/modules/module';
+import {ModuleService} from '../../services/modules/module.service';
+import {Plan} from '../../services/plans/plan';
 
 @Component({
   selector: 'app-main-module-list',
