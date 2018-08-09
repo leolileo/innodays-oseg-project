@@ -14,6 +14,7 @@ import {HeaderComponent} from './header/header.component';
 import {MainModuleListComponent} from './main/main-module-list/main-module-list.component';
 import {MainModuleIntroComponent} from './main/main-module-intro/main-module-intro.component';
 import {LoginComponent} from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes: Routes = [
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     MainModuleListComponent,
     MainModuleIntroComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     RouterModule.forRoot(
