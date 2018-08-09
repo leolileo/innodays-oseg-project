@@ -153,7 +153,7 @@ function getTractor() {
     "version": 3,
     "rating": 4,
     "dependsOn": [1, 2, 3, 4, 5],
-    "image": 'tractor.png',
+    "image": '../../../assets/tractor.png',
     "comments": [
       {
         "id": "1",
@@ -200,13 +200,13 @@ function getGearBox() {
   return {
     "id": "1",
     "name": "Gear Box",
-    "description": "A modular gearbox with three for forward motion and one for backward motion.",
+    "description": "A 3+1 gearbox with a close gear ratio.",
     "author": "Michael Schuhmacher",
     "category": "Component",
     "version": 1,
     "rating": 4,
     "dependsOn": [3, 4, 5],
-    "image": 'gearbox.png',
+    "image": '../../../assets/gearbox.png',
     "comments": [
       {
         "id": "1",
@@ -265,13 +265,13 @@ function getWheel() {
   return {
     "id": "2",
     "name": "Wheel",
-    "description": "Wheel with rim and tire.",
+    "description": "A wheel with steel rim, includes tire.",
     "author": "Michael Schuhmacher",
     "category": "Component",
     "version": 2,
     "rating": 3,
     "dependsOn": [4, 5],
-    "image": 'wheel.png',
+    "image": '../../../assets/wheel.png',
     "comments": [
       {
         "id": "3",
@@ -311,13 +311,13 @@ function getHammer() {
   return {
     "id": "3",
     "name": "Hammer",
-    "description": "A regular hammer.",
+    "description": "A regular hammer. The front can be used to pull nails.",
     "author": "Tim Allen",
     "category": "Tool",
     "version": 1,
     "rating": 5,
     "dependsOn": [],
-    "image": 'hammer.png',
+    "image": '../../../assets/hammer.png',
     "comments": [],
     "plan": null
   };
@@ -333,7 +333,7 @@ function getScrewdriver() {
     "version": 1,
     "rating": 5,
     "dependsOn": [],
-    "image": 'screwdriver.png',
+    "image": '../../../assets/screwdriver.png',
     "comments": [],
     "plan": null
   };
@@ -342,14 +342,14 @@ function getScrewdriver() {
 function getScrew() {
   return {
     "id": "5",
-    "name": "Screw with a Phillips head",
-    "description": "Screw with a Phillips head",
+    "name": "Screw",
+    "description": "A 10 cm screw with a Phillips head.",
     "author": "Tim Allen",
     "category": "Tool",
     "version": 1,
     "rating": 4,
     "dependsOn": [],
-    "image": 'screw.png',
+    "image": '../../../assets/screw.png',
     "comments": [
       {
         "id": "4",
