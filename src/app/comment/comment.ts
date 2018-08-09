@@ -3,5 +3,9 @@ export class Comment {
   author: string;
   finishedOn: string;
   typeOfProject: string;
+  experience: number;
+  difficulty: number;
+  cost: number;
+  image: string;
   text: string;
 }
