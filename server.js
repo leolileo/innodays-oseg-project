@@ -156,14 +156,14 @@ function getTractor() {
     "image": '../../../assets/tractor.png',
     "comments": [
       {
-        "id": "1",
+        "id": "5",
         "author": "CarEnthusiast",
         "finishedOn": "2018-03-16",
         "typeOfProject": "Tractor",
         "text": "Very neat! Lacks a little power, but fine for basic tasks and really robust."
       },
       {
-        "id": "2",
+        "id": "6",
         "author": "George",
         "finishedOn": "2018-06-13",
         "typeOfProject": "Tractor",
@@ -171,22 +171,22 @@ function getTractor() {
       }
     ],
     "plan": {
-      "id": "1",
+      "id": "0",
       "steps": [
         {
-          "id": "1",
+          "id": "9",
           "index": 0,
           "text": "Get your parts ready.",
           "comments": ["And a lot of time, took me two weeks to build."]
         },
         {
-          "id": "2",
+          "id": "10",
           "index": 1,
           "text": "Attach the four wheels to the gear box.",
           "comments": ["How about adding a step how to build a proper frame lol.", "Exactly this, are we supposed to attach the wheels directly to the gear box?"]
         },
         {
-          "id": "3",
+          "id": "11",
           "index": 2,
           "text": "Done!",
           "comments": []
@@ -319,7 +319,17 @@ function getHammer() {
     "dependsOn": [],
     "image": '../../../assets/hammer.png',
     "comments": [],
-    "plan": null
+    "plan": {
+      "id": "3",
+      "steps": [
+        {
+          "id": "12",
+          "index": 0,
+          "text": "Buy it.",
+          "comments": []
+        }
+      ]
+    }
   };
 }
 
@@ -335,7 +345,17 @@ function getScrewdriver() {
     "dependsOn": [],
     "image": '../../../assets/screwdriver.png',
     "comments": [],
-    "plan": null
+    "plan": {
+    "id": "4",
+      "steps": [
+      {
+        "id": "12",
+        "index": 0,
+        "text": "Buy it.",
+        "comments": []
+      }
+    ]
+  }
   };
 }
 
@@ -359,6 +379,16 @@ function getScrew() {
         "text": "The material the screw is made of seems quite soft. Be careful when using in critical parts."
       }
     ],
-    "plan": null
+    "plan": {
+      "id": "5",
+      "steps": [
+        {
+          "id": "12",
+          "index": 0,
+          "text": "Buy it.",
+          "comments": []
+        }
+      ]
+    }
   };
 }
