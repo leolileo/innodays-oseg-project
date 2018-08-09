@@ -49,7 +49,8 @@ export class MainModuleListComponent implements OnInit {
       rating: 3,
       plan: new Plan(),
       comments: [],
-      dependsOn: []
+      dependsOn: [],
+      image: 'placeholder.png'
     };
 
     // By default, a newly-created module will have the selected state.

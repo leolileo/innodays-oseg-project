@@ -9,8 +9,8 @@ export class Module {
   category: string;
   version: number;
   rating: number;
-  // TODO pictures
   plan: Plan;
   dependsOn: number[];
   comments: Comment[];
+  image: string;
 }

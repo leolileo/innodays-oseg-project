@@ -153,6 +153,7 @@ function getTractor() {
     "version": 3,
     "rating": 4,
     "dependsOn": [1, 2, 3, 4, 5],
+    "image": 'tractor.png',
     "comments": [
       {
         "id": "1",
@@ -205,6 +206,7 @@ function getGearBox() {
     "version": 1,
     "rating": 4,
     "dependsOn": [3, 4, 5],
+    "image": 'gearbox.png',
     "comments": [
       {
         "id": "1",
@@ -269,6 +271,7 @@ function getWheel() {
     "version": 2,
     "rating": 3,
     "dependsOn": [4, 5],
+    "image": 'wheel.png',
     "comments": [
       {
         "id": "3",
@@ -314,6 +317,7 @@ function getHammer() {
     "version": 1,
     "rating": 5,
     "dependsOn": [],
+    "image": 'hammer.png',
     "comments": [],
     "plan": null
   };
@@ -329,6 +333,7 @@ function getScrewdriver() {
     "version": 1,
     "rating": 5,
     "dependsOn": [],
+    "image": 'screwdriver.png',
     "comments": [],
     "plan": null
   };
@@ -344,6 +349,7 @@ function getScrew() {
     "version": 1,
     "rating": 4,
     "dependsOn": [],
+    "image": 'screw.png',
     "comments": [
       {
         "id": "4",
