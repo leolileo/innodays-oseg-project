@@ -139,12 +139,7 @@ app.delete("/api/module/:id", function (req, res) {
 
 function getAllModules() {
   return [
-    + getTractor() + ','
-    + getGearBox() + ','
-    + getWheel() + ','
-    + getHammer() + ','
-    + getScrewdriver() + ','
-    + getScrew()
+    getTractor(), getGearBox(), getWheel(), getHammer(), getScrewdriver(), getScrew()
   ];
 }
 
