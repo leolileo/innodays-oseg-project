@@ -8,26 +8,28 @@ import {RouterModule, Routes} from '@angular/router';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
 
-import { ModulpageComponent } from './modulpage/modulpage.component';
-import { AddmodulepageComponent } from './addmodulepage/addmodulepage.component';
-import { HeaderComponent } from './header/header.component';
-import { MainModuleListComponent } from './main/main-module-list/main-module-list.component';
-import { MainModuleIntroComponent } from './main/main-module-intro/main-module-intro.component';
+import {ModulpageComponent} from './modulpage/modulpage.component';
+import {AddmodulepageComponent} from './addmodulepage/addmodulepage.component';
+import {HeaderComponent} from './header/header.component';
+import {MainModuleListComponent} from './main/main-module-list/main-module-list.component';
+import {MainModuleIntroComponent} from './main/main-module-intro/main-module-intro.component';
+import {LoginComponent} from './login/login.component';
 
 
 const appRoutes: Routes = [
   {path: 'module/:id', component: ModulpageComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'add', component: AddmodulepageComponent},
   {
     path: '',
     component: LandingpageComponent,
     data: {title: 'Heroes List'}
   },
-/*  {
-    path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
-  },*/
+  /*  {
+      path: '',
+      redirectTo: '/',
+      pathMatch: 'full'
+    },*/
   {path: '**', component: NotfoundComponent}
 ];
 
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     AddmodulepageComponent,
     HeaderComponent,
     MainModuleListComponent,
-    MainModuleIntroComponent
+    MainModuleIntroComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -56,4 +59,5 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+}

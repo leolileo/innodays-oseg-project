@@ -8,7 +8,7 @@ const MODULES_COLLECTION = "contacts";
 const app = express();
 app.use(bodyParser.json());
 
-// Create a database variable outside of the database connection callback to reuse the connection pool in your app.
+// Create a database variable outs_ide of the database connection callback to reuse the connection pool in your app.
 var db;
 
 // Connect to the database before starting the application server.
@@ -62,7 +62,7 @@ app.post("/api/module", function (req, res) {
   newModule.createDate = new Date();
 
   if (!req.body.name) {
-    handleError(res, "Invalid user input", "Must provide a name.", 400);
+    handleError(res, "Inval_id user input", "Must prov_ide a name.", 400);
   } else {
     db.collection(MODULES_COLLECTION).insertOne(newModule, function (err, doc) {
       if (err) {
@@ -74,30 +74,30 @@ app.post("/api/module", function (req, res) {
   }
 });
 
-/*  "/api/main/:id"
- *    GET: find contact by id
- *    PUT: update contact by id
- *    DELETE: deletes contact by id
+/*  "/api/main/:_id"
+ *    GET: find contact by _id
+ *    PUT: update contact by _id
+ *    DELETE: deletes contact by _id
  */
 
-app.get("/api/module/:id", function (req, res) {
+app.get("/api/module/:_id", function (req, res) {
 
-  if (req.params.id === "0") {
+  if (req.params._id === "0") {
     res.status(200).json(getTractor());
-  } else if (req.params.id === "1") {
+  } else if (req.params._id === "1") {
     res.status(200).json(getGearBox());
-  } else if (req.params.id === "2") {
+  } else if (req.params._id === "2") {
     res.status(200).json(getWheel());
-  } else if (req.params.id === "3") {
+  } else if (req.params._id === "3") {
     res.status(200).json(getHammer());
-  } else if (req.params.id === "4") {
+  } else if (req.params._id === "4") {
     res.status(200).json(getScrewdriver());
-  } else if (req.params.id === "5") {
+  } else if (req.params._id === "5") {
     res.status(200).json(getScrew);
   }
 
   /*
-  db.collection(MODULES_COLLECTION).findOne({_id: new ObjectID(req.params.id)}, function (err, doc) {
+  db.collection(MODULES_COLLECTION).findOne({__id: new ObjectID(req.params._id)}, function (err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get module");
     } else {
@@ -113,26 +113,26 @@ app.get("/api/modules", function (req, res) {
 });
 
 
-app.put("/api/module/:id", function (req, res) {
+app.put("/api/module/:_id", function (req, res) {
   const updateDoc = req.body;
-  delete updateDoc._id;
+  delete updateDoc.__id;
 
-  db.collection(MODULES_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function (err, doc) {
+  db.collection(MODULES_COLLECTION).updateOne({__id: new ObjectID(req.params._id)}, updateDoc, function (err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to update module");
     } else {
-      updateDoc._id = req.params.id;
+      updateDoc.__id = req.params._id;
       res.status(200).json(updateDoc);
     }
   });
 });
 
-app.delete("/api/module/:id", function (req, res) {
-  db.collection(MODULES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function (err, result) {
+app.delete("/api/module/:_id", function (req, res) {
+  db.collection(MODULES_COLLECTION).deleteOne({__id: new ObjectID(req.params._id)}, function (err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete module");
     } else {
-      res.status(200).json(req.params.id);
+      res.status(200).json(req.params._id);
     }
   });
 });
@@ -145,7 +145,7 @@ function getAllModules() {
 
 function getTractor() {
   return {
-    "id": "0",
+    "_id": "0",
     "name": "Tractor",
     "description": "A tractor for use in small and medium fields.",
     "author": "John Deere",
@@ -156,14 +156,14 @@ function getTractor() {
     "image": '../../../assets/tractor.png',
     "comments": [
       {
-        "id": "5",
+        "_id": "5",
         "author": "CarEnthusiast",
         "finishedOn": "2018-03-16",
         "typeOfProject": "Tractor",
         "text": "Very neat! Lacks a little power, but fine for basic tasks and really robust."
       },
       {
-        "id": "6",
+        "_id": "6",
         "author": "George",
         "finishedOn": "2018-06-13",
         "typeOfProject": "Tractor",
@@ -171,22 +171,22 @@ function getTractor() {
       }
     ],
     "plan": {
-      "id": "0",
+      "_id": "0",
       "steps": [
         {
-          "id": "9",
+          "_id": "9",
           "index": 0,
           "text": "Get your parts ready.",
           "comments": ["And a lot of time, took me two weeks to build."]
         },
         {
-          "id": "10",
+          "_id": "10",
           "index": 1,
           "text": "Attach the four wheels to the gear box.",
           "comments": ["How about adding a step how to build a proper frame lol.", "Exactly this, are we supposed to attach the wheels directly to the gear box?"]
         },
         {
-          "id": "11",
+          "_id": "11",
           "index": 2,
           "text": "Done!",
           "comments": []
@@ -198,7 +198,7 @@ function getTractor() {
 
 function getGearBox() {
   return {
-    "id": "1",
+    "_id": "1",
     "name": "Gear Box",
     "description": "A 3+1 gearbox with a close gear ratio.",
     "author": "Michael Schuhmacher",
@@ -209,14 +209,14 @@ function getGearBox() {
     "image": '../../../assets/gearbox.png',
     "comments": [
       {
-        "id": "1",
+        "_id": "1",
         "author": "CarEnthusiast",
         "finishedOn": "2017-05-16",
         "typeOfProject": "Car",
         "text": "Great work! Maybe a version with adjustable gear rations would be of interest. My car runs fine, but I\\'d like a little more acceleration."
       },
       {
-        "id": "2",
+        "_id": "2",
         "author": "John Doe",
         "finishedOn": "2018-08-02",
         "typeOfProject": "Coffee grinder",
@@ -224,34 +224,34 @@ function getGearBox() {
       }
     ],
     "plan": {
-      "id": "1",
+      "_id": "1",
       "steps": [
         {
-          "id": "1",
+          "_id": "1",
           "index": 0,
           "text": "Weld the left casing.",
           "comments": []
         },
         {
-          "id": "2",
+          "_id": "2",
           "index": 1,
           "text": "Insert the axle.",
           "comments": []
         },
         {
-          "id": "3",
+          "_id": "3",
           "index": 2,
           "text": "Add the forward gears to the axle.",
           "comments": []
         },
         {
-          "id": "4",
+          "_id": "4",
           "index": 3,
           "text": "Add the backward gears to the axle.",
           "comments": ["Using the plural of 'gears' suggests there is more than one."]
         },
         {
-          "id": "5",
+          "_id": "5",
           "index": 4,
           "text": "Attach the second piece of the casing onto the first.",
           "comments": ["Maybe mention that the second piece has to be welded before it can be attached."]
@@ -263,7 +263,7 @@ function getGearBox() {
 
 function getWheel() {
   return {
-    "id": "2",
+    "_id": "2",
     "name": "Wheel",
     "description": "A wheel with steel rim, includes tire.",
     "author": "Michael Schuhmacher",
@@ -274,7 +274,7 @@ function getWheel() {
     "image": '../../../assets/wheel.png',
     "comments": [
       {
-        "id": "3",
+        "_id": "3",
         "author": "BikeFanatic",
         "finishedOn": "2018-08-21",
         "typeOfProject": "Bicycle",
@@ -282,22 +282,22 @@ function getWheel() {
       }
     ],
     "plan": {
-      "id": "2",
+      "_id": "2",
       "steps": [
         {
-          "id": "6",
+          "_id": "6",
           "index": 0,
           "text": "Weld the left casing.",
           "comments": []
         },
         {
-          "id": "7",
+          "_id": "7",
           "index": 1,
           "text": "Pump up inner tube to 3 psi.",
           "comments": ["Step 3 is lot easier if this is left to the end."]
         },
         {
-          "id": "8",
+          "_id": "8",
           "index": 2,
           "text": "Put tire with tube on rim.",
           "comments": []
@@ -309,7 +309,7 @@ function getWheel() {
 
 function getHammer() {
   return {
-    "id": "3",
+    "_id": "3",
     "name": "Hammer",
     "description": "A regular hammer. The front can be used to pull nails.",
     "author": "Tim Allen",
@@ -320,10 +320,10 @@ function getHammer() {
     "image": '../../../assets/hammer.png',
     "comments": [],
     "plan": {
-      "id": "3",
+      "_id": "3",
       "steps": [
         {
-          "id": "12",
+          "_id": "12",
           "index": 0,
           "text": "Buy it.",
           "comments": []
@@ -335,7 +335,7 @@ function getHammer() {
 
 function getScrewdriver() {
   return {
-    "id": "4",
+    "_id": "4",
     "name": "Screwdriver",
     "description": "A screwdriver for Phillips head screws.",
     "author": "Tim Allen",
@@ -346,10 +346,10 @@ function getScrewdriver() {
     "image": '../../../assets/screwdriver.png',
     "comments": [],
     "plan": {
-    "id": "4",
+    "_id": "4",
       "steps": [
       {
-        "id": "12",
+        "_id": "12",
         "index": 0,
         "text": "Buy it.",
         "comments": []
@@ -361,7 +361,7 @@ function getScrewdriver() {
 
 function getScrew() {
   return {
-    "id": "5",
+    "_id": "5",
     "name": "Screw",
     "description": "A 10 cm screw with a Phillips head.",
     "author": "Tim Allen",
@@ -372,7 +372,7 @@ function getScrew() {
     "image": '../../../assets/screw.png',
     "comments": [
       {
-        "id": "4",
+        "_id": "4",
         "author": "BikeFanatic",
         "finishedOn": "2018-05-16",
         "typeOfProject": "Car",
@@ -380,10 +380,10 @@ function getScrew() {
       }
     ],
     "plan": {
-      "id": "5",
+      "_id": "5",
       "steps": [
         {
-          "id": "12",
+          "_id": "12",
           "index": 0,
           "text": "Buy it.",
           "comments": []

@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ModuleService} from '../services/modules/module.service';
 import {Module} from '../services/modules/module';
 import {ActivatedRoute} from '@angular/router';
-import {callNgModuleLifecycle} from '@angular/core/src/view/ng_module';
-import {MockLocationStrategy} from '@angular/common/testing';
 
 
 @Component({
