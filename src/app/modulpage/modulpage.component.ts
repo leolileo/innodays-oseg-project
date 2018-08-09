@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ModuleService} from '../services/modules/module.service';
 import {Module} from '../services/modules/module';
 import {Observable, ObservableInput} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-modulpage',
@@ -16,14 +17,22 @@ export class ModulpageComponent implements OnInit {
   toolsFromSelected: Module [];
   materialsFromSelected: Module[];
   componentsFromSelected: Module[];
+  id: string;
 
 
-  constructor(private moduleService: ModuleService) {
+  constructor(private moduleService: ModuleService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      console.log(params['id']);
+    });
     this.moduleService.getModules().then((modules: Module[]) => {
       Observable.create(this.modules = modules.map((module) => {
+          if (this.id === module._id) {
+            this.selectedModule = module;
+          }
           return module;
         })
       ).subscribe(this.getCategorieFromModules());
