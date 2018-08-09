@@ -28,48 +28,25 @@ export class ModulpageComponent implements OnInit {
       this.id = params['id'];
     });
 
-    const getStuff =
-      new Promise((resolve, reject) => {
-        this.selectedModule.dependsOn.forEach(function (number) {
-          this.modulService
-            .getModuleById(number)
-            .then((mold: Module) => {
-              console.log('HALLLO' + mold.category);
-              if (mold.category === 'Component') {
-                this.componentsFromSelected.push(mold);
-              }
-              if (mold.category === 'Material') {
-                this.materialsFromSelected.push(mold);
-              }
-              if (mold.category === 'Tool') {
-                this.toolsFromSelected.push(mold);
-              }
-            });
+    this.moduleService
+      .getModules()
+      .then((modules: Module[]) => {
+        this.modules = modules.map((module) => {
+          if (this.id === module._id) {
+            this.selectedModule = module;
+          }
+          if (module.category === 'Component') {
+            this.componentsFromSelected.push(module);
+          }
+          if (module.category === 'Material') {
+            this.materialsFromSelected.push(module);
+          }
+          if (module.category === 'Tool') {
+            this.toolsFromSelected.push(module);
+          }
+          return module;
         });
       });
-
-    return new Promise((resolve, reject) => {
-      this.moduleService
-        .getModules()
-        .then((modules: Module[]) => {
-          this.modules = modules.map((module) => {
-            if (this.id === module._id) {
-              this.selectedModule = module;
-              resolve(this.selectedModule);
-            }
-            return module;
-          });
-        });
-    })
-      .then(
-        (data) => {
-          return getStuff;
-        },
-        (err) => {
-          console.log('FAIL');
-          console.log(err);
-        }
-      );
   }
 
   selectModule(module: Module) {

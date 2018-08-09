@@ -11,13 +11,13 @@
              alt="Card image">
         <div class="card-body">
           <a href="#" class="card-link">
-            <img src="../../assets/youtube.png">
+            <i style="font-size: 3em" class="fa fa-facebook-official"></i>
           </a>
           <a href="#" class="card-link">
-            <img src="../../assets/facebook.png">
+            <i style="font-size: 3em" class="fa fa-youtube-square"></i>
           </a>
           <a href="#" class="card-link">
-            <img src="../../assets/twitter.png">
+            <i style="font-size: 3em" class="fa fa-twitter-square"></i>
           </a>
         </div>
         <div class="card-footer text-muted">last updated : 09.08.2018
@@ -31,9 +31,6 @@
       <div class="form-group">
         <select class="custom-select">
           <option selected="">v.{{selectedModule.version}}</option>
-          <option value="1">v.3</option>
-          <option value="2">v.4</option>
-          <option value="3">v.5</option>
         </select>
       </div>
       <div>
@@ -93,10 +90,8 @@
 
       <li *ngFor="let step of selectedModule.plan.steps" class="list-group-item">
         <div class="panel">
-          <div class="panel-heading">{{step.index}}</div>
-          <hr class="my-2">
           <div class="panel-body">
-            <p>{{step.text}}</p>
+            <p>Step {{step.index}} - {{step.text}}</p>
             <div *ngFor="let comment of step.comments" class="alert alert-dismissible alert-primary">
               Comment: {{comment}}
             </div>
