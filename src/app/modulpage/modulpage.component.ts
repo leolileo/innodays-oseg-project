@@ -4,6 +4,7 @@ import {Module} from '../services/modules/module';
 import {Observable, ObservableInput} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 
+
 @Component({
   selector: 'app-modulpage',
   templateUrl: './modulpage.component.html',
