@@ -1,4 +1,4 @@
-import {Step} from './step';
+import {Step} from '../steps/step';
 
 export class Plan {
   _id?: string;
