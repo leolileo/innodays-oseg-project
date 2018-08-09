@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ModuleService} from '../services/modules/module.service';
 import {Module} from '../services/modules/module';
-import {Observable, ObservableInput} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 
 
@@ -15,9 +14,9 @@ export class ModulpageComponent implements OnInit {
 
   modules: Module[];
   selectedModule: Module;
-  toolsFromSelected: Module [];
-  materialsFromSelected: Module[];
-  componentsFromSelected: Module[];
+  toolsFromSelected: Array<Module> = [];
+  materialsFromSelected: Array<Module> = [];
+  componentsFromSelected: Array<Module> = [];
   id: string;
 
 
@@ -29,43 +28,31 @@ export class ModulpageComponent implements OnInit {
       this.id = params['id'];
       console.log(params['id']);
     });
-    this.moduleService.getModules().then((modules: Module[]) => {
-      Observable.create(this.modules = modules.map((module) => {
+
+    this.moduleService
+      .getModules()
+      .then((modules: Module[]) => {
+        this.modules = modules.map((module) => {
           if (this.id === module._id) {
             this.selectedModule = module;
           }
+          if (module.category === 'Component') {
+            console.log(module);
+            this.componentsFromSelected.push(module);
+          }
+          if (module.category === 'Material') {
+            this.materialsFromSelected.push(module);
+          }
+          if (module.category === 'Tool') {
+            this.toolsFromSelected.push(module);
+          }
           return module;
-        })
-      ).subscribe(this.getCategorieFromModules());
-    });
+        });
+      });
   }
 
   selectModule(module: Module) {
     this.selectedModule = module;
-  }
-
-  getModuleByID(id: string) {
-    this.modules.forEach(function (module) {
-      if (module._id === id) {
-        return module;
-      }
-    });
-  }
-
-  getCategorieFromModules() {
-    this.selectedModule.dependsOn.forEach(function (moduleId) {
-      let module = this.getModuleByID(moduleId);
-      if (module.category === 'component') {
-        this.componentsFromSelected.push(module);
-      }
-      if (this.getModuleByID(moduleId).category === 'material') {
-        this.materialsFromSelected.push(module);
-      }
-      if (this.getModuleByID(moduleId).category === 'tool') {
-        this.toolsFromSelected.push(module);
-      } else {
-      }
-    });
   }
 
 
