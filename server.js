@@ -346,16 +346,16 @@ function getScrewdriver() {
     "image": '../../../assets/screwdriver.png',
     "comments": [],
     "plan": {
-    "_id": "4",
+      "_id": "_4",
       "steps": [
-      {
-        "_id": "12",
-        "index": 0,
-        "text": "Buy it.",
-        "comments": []
-      }
-    ]
-  }
+        {
+          "_id": "12",
+          "index": 0,
+          "text": "Buy it.",
+          "comments": []
+        }
+      ]
+    }
   };
 }
 
@@ -365,7 +365,7 @@ function getScrew() {
     "name": "Screw",
     "description": "A 10 cm screw with a Phillips head.",
     "author": "Tim Allen",
-    "category": "Tool",
+    "category": "Material",
     "version": 1,
     "rating": 4,
     "dependsOn": [],
