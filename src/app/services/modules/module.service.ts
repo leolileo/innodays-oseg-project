@@ -6,6 +6,7 @@ import {Http, Response} from '@angular/http';
 export class ModuleService {
   private modulesUrl = '/api/modules';
   private moduleUrl = '/api/module';
+  private moduelIdUrl = '/api/module/';
 
   constructor(private http: Http) {
   }
@@ -17,6 +18,16 @@ export class ModuleService {
       .then(response => response.json() as Module[])
       .catch(this.handleError);
   }
+
+
+  // get("/api/main")
+  getModuleById(number: string): Promise<void | Module> {
+    return this.http.get(this.moduelIdUrl + number)
+      .toPromise()
+      .then(response => response.json() as Module)
+      .catch(this.handleError);
+  }
+
 
   // post("/api/main")
   createModule(newModule: Module): Promise<void | Module> {

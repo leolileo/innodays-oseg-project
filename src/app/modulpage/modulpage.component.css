@@ -14,3 +14,7 @@
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
+
+.comment {
+  border: 4px black !important;
+}
