@@ -1,13 +1,23 @@
 <div class="jumbotron">
   <div class="row">
     <div class="col-1"></div>
-    <div class="input-group col-9">
+    <div class="input-group col-7">
       <input class="form-control py-2" type="search" value="search" id="example-search-input">
       <span class="input-group-append">
         <button class="btn btn-outline-secondary" type="button">
-            <i class="fas fa-search"></i>
+            <i class="fa fa-search"></i>
         </button>
       </span>
+    </div>
+    <div class="col-2">
+      <div class="form-group">
+        <select class="custom-select">
+          <option selected="">Sort by</option>
+          <option value="1">Top rated</option>
+          <option value="2">Most viewed</option>
+          <option value="3">Date added</option>
+        </select>
+      </div>
     </div>
     <div class="col-2">
       <button class="btn btn-link btn-lg">
@@ -21,6 +31,8 @@
     <div class="row justify-content-center">
       <div class="col-auto mb-3">
         <div class="card" style="width: 18rem;">
+          <h3 class="card-header">
+            <i class="fa fa-eye"></i> 560</h3>
           <img class="card-img-top" src={{modules[0].image}} alt={{modules[0].name}}>
           <div class="card-body">
             <h5 class="card-title">{{modules[0].name}}</h5>
@@ -31,6 +43,8 @@
       </div>
       <div class="col-auto mb-3">
         <div class="card" style="width: 18rem;">
+          <h3 class="card-header">
+            <i class="fa fa-eye"></i> 240</h3>
           <img class="card-img-top" src={{modules[1].image}} alt={{modules[1].name}}>
           <div class="card-body">
             <h5 class="card-title">{{modules[1].name}}</h5>
@@ -41,6 +55,8 @@
       </div>
       <div class="col-auto mb-3">
         <div class="card" style="width: 18rem;">
+          <h3 class="card-header">
+            <i class="fa fa-eye"></i> 110</h3>
           <img class="card-img-top" src={{modules[2].image}} alt={{modules[2].name}}>
           <div class="card-body">
             <h5 class="card-title">{{modules[2].name}}</h5>
@@ -51,6 +67,8 @@
       </div>
       <div class="col-auto mb-3">
         <div class="card" style="width: 18rem;">
+          <h3 class="card-header">
+            <i class="fa fa-eye"></i> 50</h3>
           <img class="card-img-top" src={{modules[3].image}} alt={{modules[3].name}}>
           <div class="card-body">
             <h5 class="card-title">{{modules[3].name}}</h5>
@@ -61,6 +79,8 @@
       </div>
       <div class="col-auto mb-3">
         <div class="card" style="width: 18rem;">
+          <h3 class="card-header">
+            <i class="fa fa-eye"></i> 45</h3>
           <img class="card-img-top" src={{modules[4].image}} alt={{modules[4].name}}>
           <div class="card-body">
             <h5 class="card-title">{{modules[4].name}}</h5>
@@ -71,6 +91,8 @@
       </div>
       <div class="col-auto mb-3">
         <div class="card" style="width: 18rem;">
+          <h3 class="card-header">
+            <i class="fa fa-eye"></i> 10</h3>
           <img class="card-img-top" src={{modules[5].image}} alt={{modules[5].name}}>
           <div class="card-body">
             <h5 class="card-title">{{modules[5].name}}</h5>

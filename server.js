@@ -160,13 +160,21 @@ function getTractor() {
         "author": "CarEnthusiast",
         "finishedOn": "2018-03-16",
         "typeOfProject": "Tractor",
-        "text": "Very neat! Lacks a little power, but fine for basic tasks and really robust."
+        "experience" : 5,
+        "difficulty" : 4,
+        "cost" : 3500,
+        "image" : "../../../assets/tractor_sample_1.png",
+        "text": "Very neat! Lacks a little power, but fine for basic tasks and really robust.",
       },
       {
         "_id": "6",
         "author": "George",
         "finishedOn": "2018-06-13",
         "typeOfProject": "Tractor",
+        "experience" : 5,
+        "difficulty" : 3,
+        "cost" : 4000,
+        "image" : "../../../assets/tractor_sample_2.png",
         "text": "A lot less maintenance required compared to the horse I used before."
       }
     ],
@@ -213,6 +221,10 @@ function getGearBox() {
         "author": "CarEnthusiast",
         "finishedOn": "2017-05-16",
         "typeOfProject": "Car",
+        "experience" : 4,
+        "difficulty" : 4,
+        "cost" : 500,
+        "image" : "../../../assets/gearbox_sample_2.png",
         "text": "Great work! Maybe a version with adjustable gear rations would be of interest. My car runs fine, but I\\'d like a little more acceleration."
       },
       {
@@ -220,6 +232,10 @@ function getGearBox() {
         "author": "John Doe",
         "finishedOn": "2018-08-02",
         "typeOfProject": "Coffee grinder",
+        "experience" : 2,
+        "difficulty" : 5,
+        "cost" : 1200,
+        "image" : "../../../assets/gearbox_sample_1.png",
         "text": "Way too large for household appliances."
       }
     ],
@@ -278,6 +294,10 @@ function getWheel() {
         "author": "BikeFanatic",
         "finishedOn": "2018-08-21",
         "typeOfProject": "Bicycle",
+        "experience" : 4,
+        "difficulty" : 2,
+        "cost" : 75,
+        "image" : "../../../assets/wheel_sample.png",
         "text": "This module is directed at motored vehicles, the rim tends to get quite heavy."
       }
     ],
@@ -376,6 +396,10 @@ function getScrew() {
         "author": "BikeFanatic",
         "finishedOn": "2018-05-16",
         "typeOfProject": "Car",
+        "experience" : 5,
+        "difficulty" : 0,
+        "cost" : 0.5,
+        "image" : "../../../assets/screw.png",
         "text": "The material the screw is made of seems quite soft. Be careful when using in critical parts."
       }
     ],
